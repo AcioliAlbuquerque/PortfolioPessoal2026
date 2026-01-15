@@ -23,6 +23,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
+  -webkit-backdrop-filter: blur(30px); /* Para iOS */
   backdrop-filter: blur(30px);
   transform: scale(0.5);
   animation: zoom-in 1s ease forwards;
@@ -51,6 +52,7 @@ header {
   opacity: 0;
   animation: slide-in 1s ease forwards;
   animation-delay: 1s;
+  will-change: transform, opacity; /* Otimiza animações */
 }
 
 @keyframes slide-in {
@@ -283,6 +285,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 15px;
+  -webkit-backdrop-filter: blur(10px); /* Para iOS */
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
@@ -418,6 +421,7 @@ header {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(5px); /* Para iOS */
   backdrop-filter: blur(5px);
 }
 
@@ -492,6 +496,7 @@ header {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
+  -webkit-backdrop-filter: blur(5px); /* Para iOS */
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -643,6 +648,9 @@ textarea {
     height: auto;
     min-height: 90vh;
     padding-bottom: 20px;
+    -webkit-backdrop-filter: none; /* Evita bugs no iOS */
+    backdrop-filter: none; /* Evita bugs no iOS */
+    background: rgba(255, 255, 255, 0.2); /* Fallback */
   }
 
   body {
@@ -720,6 +728,27 @@ textarea {
   .projects-grid,
   .feedbacks-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cert-card,
+  .degree-card,
+  .project-card,
+  .feedback-card {
+    -webkit-backdrop-filter: none; /* Evita bugs no iOS */
+    backdrop-filter: none; /* Evita bugs no iOS */
+    background: rgba(255, 255, 255, 0.2); /* Fallback */
+  }
+
+  .portfolio-btn {
+    -webkit-backdrop-filter: none; /* Evita bugs no iOS */
+    backdrop-filter: none; /* Evita bugs no iOS */
+    background: rgba(255, 255, 255, 0.2); /* Fallback */
+  }
+
+  .tech-icon {
+    -webkit-backdrop-filter: none; /* Evita bugs no iOS */
+    backdrop-filter: none; /* Evita bugs no iOS */
+    background: rgba(255, 255, 255, 0.2); /* Fallback */
   }
 
   .tech-stack-scroller {
